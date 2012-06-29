@@ -1,14 +1,48 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>MyWebsite</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+	<head>
+		<title><%=@title%></title>
+		<%= csrf_meta_tags %>
+		<%= stylesheet_link_tag 'bootstrap/bootstrap.min', :media => 'all' %> 
+		<%= stylesheet_link_tag 'bootstrap/bootstrap-responsive.min', :media => 'all' %>
+		<%= stylesheet_link_tag    "application", :media => "all" %>
+		<%= javascript_include_tag "application" %>
+		<meta charset="utf-8">
+	</head>
+	
+	<body>
+		<div class="container-fluid">
+		
+			<div class = "row" id="header" style="background-color:grey">
+				<div class="span4" style="background-color:grey">
+					<h1>Kazuhito Ochiai</h1>
+				</div>
+			</div>
+			
+			
+			<row class="span2" style="padding-top:20px">  
+			
+				<ul class="nav nav-list">  
+				<!--<li class="nav-header">List header</li>  -->
+		        <li class="active"><a href="#"><i class="icon-white icon-home"></i> Blog</a></li>  
+		        <li><a href="#"><i class="icon-book"></i> About</a></li>  
+		        <li><a href="pages/about"><i class="icon-pencil"></i> Projects</a></li>  
+		        <li><a href="#"><i class="icon-user"></i> Resume / CV</a></li>  
+		        <li><a href="#"><i class="icon-cog"></i> Contact</a></li>   
 
-<%= yield %>
-
-</body>
+		        </ul>  
+		    </row>
+			<div class="span10" style="padding-top:20px"> 
+				<%= yield %>
+			</div>
+			
+			 
+		</div>
+		
+		
+	
+	
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquerey.min.js"></script>
+	</body>
+	
 </html>
