@@ -1,5 +1,7 @@
 MyWebsite::Application.routes.draw do
 
+  get "pages/projects"
+
   root :to => 'pages#home'
 
   get "pages/home"
@@ -7,6 +9,14 @@ MyWebsite::Application.routes.draw do
   get "pages/contact"
 
   get "pages/about"
+  
+  resources :users
+  
+  match '/projects', :to => 'pages#projects'
+  match '/about', :to => 'pages#about'
+  match '/contact', :to => 'pages#contact'
+
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

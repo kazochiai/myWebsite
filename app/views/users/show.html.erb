@@ -1,0 +1,8 @@
+<h1>
+	<%= gravatar_image_tag @user.email, :class => "gravatar"%>
+	<%= @user.name %>
+</h1>
+
+<p><%= @user.email %></p>
+
+<%= link_to 'home', users_path %>

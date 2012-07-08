@@ -3,45 +3,53 @@
 	<head>
 		<title><%=@title%></title>
 		<%= csrf_meta_tags %>
-		<%= stylesheet_link_tag 'bootstrap/bootstrap.min', :media => 'all' %> 
-		<%= stylesheet_link_tag 'bootstrap/bootstrap-responsive.min', :media => 'all' %>
 		<%= stylesheet_link_tag    "application", :media => "all" %>
 		<%= javascript_include_tag "application" %>
 		<meta charset="utf-8">
 	</head>
-	
-	<body>
+
+	<!--background-image:url('/assets/background.png');-->
+	<body style="padding-top:60px">
 		<div class="container-fluid">
-		
-			<div class = "row" id="header" style="background-color:grey">
-				<div class="span4" style="background-color:grey">
-					<h1>Kazuhito Ochiai</h1>
+			
+		<div class ="navbar navbar-fixed-top">
+			<div class="navbar-inner">
+				<div class="container-fluid">
+				<a class="brand" href="">Kazuhito Ochiai</a>
+					<ul id="navigationBar" class="nav">
+						<li id="tab1"><%=link_to "Blog",root_path %></li>
+						<li id="tab2"><%=link_to "Projects", projects_path %></li>
+						<li id="tab3"><%=link_to "About", about_path %></li>
+						<li id="tab4"><%=link_to "Contact", contact_path %></li>
+					</ul>
+					
+				<!-- drop down menu -->	
+				<ul class="nav pull-right">
+				<li class="divider-vertical"></li>
+				<li class="dropdown">
+					<a href="" class="dropdown-toggle" data-toggle="dropdown">
+					Language / 言語
+					<span class="caret"></span>
+					</a>
+				<ul class="dropdown-menu">
+					<li><a href="">English</a></li>
+					<li><a href="">日本語</a></li>
+				</ul>
+				</li>
+				</ul>
 				</div>
 			</div>
 			
+		</div>
 			
-			<row class="span2" style="padding-top:20px">  
-			
-				<ul class="nav nav-list">  
-				<!--<li class="nav-header">List header</li>  -->
-		        <li class="active"><a href="#"><i class="icon-white icon-home"></i> Blog</a></li>  
-		        <li><a href="#"><i class="icon-book"></i> About</a></li>  
-		        <li><a href="pages/about"><i class="icon-pencil"></i> Projects</a></li>  
-		        <li><a href="#"><i class="icon-user"></i> Resume / CV</a></li>  
-		        <li><a href="#"><i class="icon-cog"></i> Contact</a></li>   
-
-		        </ul>  
-		    </row>
-			<div class="span10" style="padding-top:20px"> 
+			<div class="span12" style="padding-top:20px"> 
 				<%= yield %>
 			</div>
-			
-			 
+		</div>
+		<div id="footer">
+			<!-- <p style="text-align:center">No©2012 <B>Kazuhito Ochiai</B>, You can use any material from this website.</p>-->
 		</div>
 		
-		
-	
-	
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquerey.min.js"></script>
 	</body>
 	

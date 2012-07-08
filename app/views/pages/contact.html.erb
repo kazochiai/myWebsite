@@ -2,20 +2,23 @@
 
 <form class="form-horizontal" style="padding-top:20px">
 		
-		<label for="name">Last</label>
-		<input type="text" name="last"/>
 		<label for="name">First</label>
+		<input type="text" name="last"/>
+		<label for="name">Last</label>
 		<input type="text" name="first"/>
 		<label for="name" >Email</label>
 		<input type="text" placeholder="e.g. hello@example.com" name="email" />
 		<label for="name" >Message</label>
-		<input type="text" size="20"name="message" />
+		<textarea name="comments" id="comments" rows="6" cols="50" wrap="physical, hard" tabindex="15">Type your comments here</textarea>
+
 
 		<br/><br/>
-		<input type="submit" value="send"class="btn btn-primary btn-large"/>
+		<input type="submit" value="send"class="btn btn-primary"/>
 		
+	
 	
 </form>
 
-
-
+ <script type="text/javascript">
+	 	 $("li#tab4").addClass('active'); //activate correct tab in navigation bar
+ </script>
