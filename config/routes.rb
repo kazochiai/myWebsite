@@ -15,6 +15,7 @@ MyWebsite::Application.routes.draw do
   match '/projects', :to => 'pages#projects'
   match '/about', :to => 'pages#about'
   match '/contact', :to => 'pages#contact'
+  match '/signup', :to => 'users#new'
 
   
   # The priority is based upon order of creation:
