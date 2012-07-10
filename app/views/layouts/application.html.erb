@@ -25,7 +25,18 @@
 					
 				<!-- drop down menu -->	
 				<ul class="nav pull-right">
+				
 				<li class="divider-vertical"></li>
+			
+				
+				<% if signed_in? %>
+						<li id="signOut" ><%= link_to current_user.name, signout_path, :method => :delete %></li> 
+				<% else %>
+						<li id="signIn"><%= link_to "Sign in", signin_path %></li>	
+				<% end %>
+				
+				
+			<!--	<li class="divider-vertical"></li>
 				<li class="dropdown">
 					<a href="" class="dropdown-toggle" data-toggle="dropdown">
 					Language / 言語
@@ -36,11 +47,17 @@
 					<li><a href="">日本語</a></li>
 				</ul>
 				</li>
-				</ul>
+				</ul>-->
 				</div>
 			</div>
 			
 		</div>
+		
+			<section class="round">
+				<% flash.each do |key, value| %>
+					<div class="flash <%= key %>"><%= value %></div>
+				<% end %>
+			</section>
 			
 			<div class="span12" style="padding-top:20px"> 
 				<%= yield %>
@@ -51,6 +68,8 @@
 		</div>
 		
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquerey.min.js"></script>
+		
+		 
 	</body>
 	
 </html>

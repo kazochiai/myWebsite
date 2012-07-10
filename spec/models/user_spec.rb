@@ -55,6 +55,7 @@ describe User do
 			end
 	
 			describe "has_password? method" do
+			
 				it "should be true if the passwords match" do
 					@user.has_password?(@attr[:password]).should be_true
 				end
@@ -68,7 +69,7 @@ describe User do
 			
 				it "should return nil on email/password mismatch" do
 					wrong_password_user = User.authenticate(@attr[:email], "wrongpass")
-				wrong_password_user.should be_nil
+					wrong_password_user.should be_nil
 				end
 				
 				it "should return nil for an email address with no user" do
