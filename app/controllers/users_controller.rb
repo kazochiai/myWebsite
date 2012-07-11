@@ -16,8 +16,6 @@ class UsersController < ApplicationController
 	def show
 		@user = User.find(params[:id]) 
 		@title = @user.name
-		@apns = APNS.new
-		@apns.host = 'gateway.push.apple.com' 
 	end
 	
 	def create
