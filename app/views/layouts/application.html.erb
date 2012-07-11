@@ -30,7 +30,21 @@
 			
 				
 				<% if signed_in? %>
-						<li id="signOut" ><%= link_to current_user.name, signout_path, :method => :delete %></li> 
+					
+							<li class="dropdown">
+								 <a href="" class="dropdown-toggle" data-toggle="dropdown">
+									 <%= current_user.name %>
+									<span class="caret"></span>
+								 </a>
+								<ul class="dropdown-menu">
+									<li><a href="/users">User management</a></li> 
+									<li><a href="/signout">Message Box</a></li> 
+									<li class="divider"></li>
+									<li><%= link_to "Sign out", signout_path, :method => :delete %></li> 
+								</ul>
+							</li>
+						
+						
 				<% else %>
 						<li id="signIn"><%= link_to "Sign in", signin_path %></li>	
 				<% end %>
@@ -64,10 +78,13 @@
 			</div>
 		</div>
 		<div id="footer">
-			<!-- <p style="text-align:center">No©2012 <B>Kazuhito Ochiai</B>, You can use any material from this website.</p>-->
+		
 		</div>
 		
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquerey.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquerey.min.js"> </script>
+		<script type="text/javascript">
+			$('.dropdown-toggle').dropdown()
+		</script>
 		
 		 
 	</body>

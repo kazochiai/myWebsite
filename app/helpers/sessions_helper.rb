@@ -18,11 +18,22 @@ module SessionsHelper
     	!current_user.nil?
     end
     
+    def is_admin?
+    	signed_in? && current_user.userType == 0
+    end
+    
     def sign_out
     	cookies.delete(:remember_token)
     	current_user = nil 
     end
+    
+    def current_user?(user)
+		 user == current_user
+	end
 	
+	def deny_access
+		redirect_to "/404.html"
+	end
 	
 	private
 		def user_from_remember_token

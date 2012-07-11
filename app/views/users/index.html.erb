@@ -1,0 +1,35 @@
+<table class="table table-striped">
+<thead>
+    <tr>
+      <th>Id</th>
+      <th>User Name</th>
+      <th>Email</th>
+      <th>Access</th>
+      <th>Last Access</th>
+      <th># of Access</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+<% @user.each do |user| %>
+ 
+  <tbody>
+   <tr>
+   	  <td><%= user.id %></td>
+      <td><%= link_to user.name, user_path(user) %></td>
+      <td><%= user.email %></td>
+      <% if user.userType == 0 %>
+      	<td><%= "Admin" %></td>
+      <% else %>
+      	<td><%= "User" %></td>
+      <% end %>
+      <td><%= "N/A" %></td>
+      <td><%= "N/A" %></td>
+      <td><%= link_to 'Edit', edit_user_path(user) %> | <%= link_to "delete", user, :method => :delete, :confirm => "You sure?", :title => "Delete #{user.name}" %></td>
+
+
+   </tr>
+  </tbody>
+
+</li>
+<% end %>
+</table>
